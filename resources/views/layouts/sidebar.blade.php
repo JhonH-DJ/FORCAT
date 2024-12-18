@@ -15,7 +15,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ route('productos.index') }}">
             <i class="fa-solid fa-laptop"></i>
             <span>Productos</span></a>
     </li>
@@ -23,7 +23,7 @@
 
  
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ route('ventas.index') }}">
             <i class="fa-solid fa-sack-dollar"></i>
             <span>Ventas</span></a>
     </li>
@@ -38,13 +38,13 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item active">
-        <a class="nav-link" href="{{ route('Lista') }}">
+        <a class="nav-link" href="{{ route('clientes.index') }}">
             <i class="fa-solid fa-users"></i>
             <span>Clientes</span></a>
     </li>
 
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ route('pedidos.index') }}">
             <i class="fa-solid fa-truck"></i>
             <span>Pedidos</span></a>
     </li>

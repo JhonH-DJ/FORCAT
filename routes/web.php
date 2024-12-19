@@ -2,8 +2,10 @@
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\VentasController;
+
 use App\Http\Controllers\PedidoController;
-use Illuminate\Support\Facades\Route;   
+use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\RegistrarController;
 use Illuminate\Contracts\Routing\Registrar;
 
@@ -27,9 +29,9 @@ Route::controller(ClienteController::class)->prefix('Clientes')->group(function 
 });
 
 Route::controller(ProductoController::class)->prefix('Productos')->group(function () {
-    Route::get('', 'index')->name('productos.index');
-    Route::get('crear', 'create')->name('productos.create');
-    Route::post('guardar', 'store')->name('productos.store');
+    Route::get('', 'index')->name('productos.index');    // Ruta para mostrar la lista de productos
+    Route::get('crear', 'create')->name('productos.create');   // Ruta para la creación de un producto
+    Route::post('guardar', 'store')->name('productos.store');   // Ruta para guardar un nuevo producto
 });
 
 Route::controller(VentasController::class)->prefix('Ventas')->group(function () {
@@ -38,8 +40,14 @@ Route::controller(VentasController::class)->prefix('Ventas')->group(function () 
     Route::post('guardar', 'store')->name('ventas.store');
 });
 
-Route::controller(PedidoController::class)->prefix('Pedidos')->group(function () {
+Route::prefix('Pedidos')->controller(PedidoController::class)->group(function () {
+    // Mostrar la lista de pedidos
     Route::get('', 'index')->name('pedidos.index');
+    
+    // Mostrar el formulario para crear un nuevo pedido
     Route::get('crear', 'create')->name('pedidos.create');
+    
+    // Guardar el nuevo pedido
     Route::post('guardar', 'store')->name('pedidos.store');
 });
+
